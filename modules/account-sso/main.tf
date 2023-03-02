@@ -19,8 +19,8 @@ resource "aws_iam_role" "role" {
   name                 = each.key
   max_session_duration = 21600
   permissions_boundary = aws_iam_policy.bcgov_perm_boundary.arn
-
-  assume_role_policy = <<EOF
+  managed_policy_arns  = each.value
+  assume_role_policy   = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -41,12 +41,8 @@ resource "aws_iam_role" "role" {
 EOF
 }
 
-resource "random_id" "suffix" {
-  byte_length = 4
-}
-
 resource "aws_iam_policy" "bcgov_perm_boundary" {
-  name        = "BCGOV_Permission_Boundary_${random_id.suffix.hex}"
+  name        = "BCGOV_Permission_Boundary_v2"
   description = "Policy to restrict actions on BCGov Resources"
   policy = jsonencode({
     Version = "2012-10-17"
@@ -148,13 +144,3 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
     ]
   })
 }
-
-resource "aws_iam_role_policy_attachment" "role-policy-attach" {
-  for_each = var.account_roles
-
-  role       = each.key
-  policy_arn = each.value
-
-  depends_on = [aws_iam_role.role]
-}
-

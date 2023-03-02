@@ -38,7 +38,7 @@ variable "workload_account_role_config" {
   description = "A mapping of role names to be created to (existing) policy arns."
   type = list(object({
     aws_role_name       = string
-    aws_policy_arn      = string
+    aws_policy_arns     = list(string)
     keycloak_group_name = string
     environments        = list(string)
   }))

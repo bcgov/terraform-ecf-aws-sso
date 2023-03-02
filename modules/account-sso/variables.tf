@@ -27,7 +27,7 @@ variable "account_name" {
 
 variable "account_roles" {
   description = "Roles and associated policies for an account."
-  type        = map(string)
+  type        = map(list(string))
 }
 
 variable "trusted_login_sources" {

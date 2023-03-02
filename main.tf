@@ -1,7 +1,4 @@
 locals {
-  // massage new "role config" variable structure into original structure
-  workload_account_roles = { for role_spec in var.workload_account_role_config : role_spec.aws_role_name => role_spec.aws_policy_arn }
-
   trusted_login_sources = var.custom_login_url == null ? [
     "https://signin.aws.amazon.com/saml"] : [
     "https://signin.aws.amazon.com/saml",
