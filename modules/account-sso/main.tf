@@ -14,8 +14,8 @@ resource "aws_iam_saml_provider" "default" {
 data "aws_caller_identity" "aws_context" {}
 
 resource "aws_iam_role" "role" {
+  for_each = var.account_roles
 
-  for_each             = var.account_roles
   name                 = each.key
   max_session_duration = 21600
   permissions_boundary = aws_iam_policy.bcgov_perm_boundary.arn
