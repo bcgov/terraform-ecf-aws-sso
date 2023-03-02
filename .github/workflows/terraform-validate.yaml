@@ -13,3 +13,11 @@ jobs:
 
     - name: terraform validate
       run: terraform validate
+
+    - name: terraform init
+      run: terraform init -input=false -backend=false
+      working-directory: modules/account-sso
+
+    - name: terraform validate
+      run: terraform validate
+      working-directory: modules/account-sso
