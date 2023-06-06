@@ -42,7 +42,7 @@ EOF
 }
 
 resource "aws_iam_policy" "bcgov_perm_boundary" {
-  name        = "BCGOV_Permission_Boundary_v2"
+  name        = "BCGOV_Permission_Boundary"
   description = "Policy to restrict actions on BCGov Resources"
   policy = jsonencode({
     Version = "2012-10-17"

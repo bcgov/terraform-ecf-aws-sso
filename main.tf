@@ -4,7 +4,7 @@ locals {
     "https://signin.aws.amazon.com/saml",
     var.custom_login_url
   ]
-  idp_name = "BCGovKeyCloak-${var.kc_realm}-v2"
+  idp_name = "BCGovKeyCloak-${var.kc_realm}"
 }
 
 data "keycloak_realm" "realm" {
@@ -13,7 +13,7 @@ data "keycloak_realm" "realm" {
 
 data "keycloak_group" "tenant_group" {
   realm_id = data.keycloak_realm.realm.id
-  name     = "Project Team Groups (v2)"
+  name     = "Project Team Groups"
 }
 
 resource "keycloak_group" "project_group" {
