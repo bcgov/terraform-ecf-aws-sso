@@ -54,7 +54,17 @@ variable "project_spec" {
   type = object({
     identifier = string
     name       = string
-    tags       = map(string)
+    tags = object({
+      account_coding      = string
+      ministry_name       = string
+      admin_contact_email = string
+      admin_contact_name  = string
+      billing_group       = string
+      additional_contacts = list(object({
+        name  = string
+        email = string
+      }))
+    })
     accounts = list(object({
       name        = string
       environment = string
