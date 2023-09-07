@@ -60,10 +60,10 @@ variable "project_spec" {
       admin_contact_email = string
       admin_contact_name  = string
       billing_group       = string
-      additional_contacts = list(object({
-        name  = string
-        email = string
-      }))
+      additional_contacts = optional(list(object({
+        name  = optional(string, null)
+        email = optional(string, null)
+      })))
     })
     accounts = list(object({
       name        = string
