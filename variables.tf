@@ -55,8 +55,8 @@ variable "project_spec" {
     identifier = string
     name       = string
     tags = object({
-      account_coding      = string
-      ministry_name       = string
+      account_coding = string
+      # ministry_name       = string
       admin_contact_email = string
       admin_contact_name  = string
       billing_group       = string
