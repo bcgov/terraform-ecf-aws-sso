@@ -71,7 +71,10 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
           "iam:Update*",
           "iam:Delete*",
           "iam:DetachRolePolicy",
-          "iam:DeleteRolePolicy"
+          "iam:DeleteRolePolicy",
+          "iam:DeleteUserPermissionsBoundary",
+          "iam:PutUserPermissionsBoundary",
+          "iam:DeleteRolePermissionsBoundary"
         ]
         Effect = "Deny"
         Resource = [
@@ -79,8 +82,8 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
           "arn:aws:iam::*:role/CloudCustodian",
           "arn:aws:iam::*:role/AWSCloudFormationStackSetExecutionRole",
           "arn:aws:iam::*:role/*BCGOV*",
-          "arn:aws:iam::*:instance-profile/EC2-Default-SSM-AD-Role-ip"
-
+          "arn:aws:iam::*:instance-profile/EC2-Default-SSM-AD-Role-ip",
+          "arn:aws:iam::*:user/*"
         ]
         Sid = "DenyPermBoundaryBCGovAlteration"
       },
