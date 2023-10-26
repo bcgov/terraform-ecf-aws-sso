@@ -60,6 +60,12 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
         Sid      = "DenyPermBoundaryBCGovIDPAlteration"
       },
       {
+        Action   = "dynamodb:DeleteTable"
+        Effect   = "Deny"
+        Resource = "arn:aws:dynamodb:*:*:table/BCGOV_IAM_USER_TABLE"
+        Sid      = "DenyIAMUserTableDeletion"
+      },       
+      {
         Action   = "elasticloadbalancing:DeleteLoadBalancer"
         Effect   = "Deny"
         Resource = "arn:aws:elasticloadbalancing:ca-central-1:*:loadbalancer/app/default/*"
