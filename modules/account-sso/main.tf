@@ -64,7 +64,7 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
         Effect   = "Deny"
         Resource = "arn:aws:dynamodb:*:*:table/BCGOV_IAM_USER_TABLE"
         Sid      = "DenyIAMUserTableDeletion"
-      },       
+      },
       {
         Action   = "elasticloadbalancing:DeleteLoadBalancer"
         Effect   = "Deny"
