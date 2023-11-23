@@ -39,6 +39,10 @@ resource "aws_iam_role" "role" {
   ]
 }
 EOF
+
+  depends_on = [
+    aws_iam_policy.bcgov_cost_explorer_and_budgets,
+  ]
 }
 
 resource "aws_iam_policy" "bcgov_perm_boundary" {
@@ -149,6 +153,28 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
         Effect   = "Deny"
         Resource = "arn:aws:secretsmanager:*:*:secret:accelerator*"
         Sid      = "DenyDefaultSecretManagerAlteration"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_policy" "bcgov_cost_explorer_and_budgets" {
+  name        = "BCGOV_CostExplorerAndBudgets"
+  description = "Give all access to Cost Explorer and Budgets"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid      = "AllowCostExplorer"
+        Effect   = "Allow"
+        Action   = "ce:*"
+        Resource = "*"
+      },
+      {
+        Sid      = "AllowBudgets"
+        Effect   = "Allow"
+        Action   = "budgets:*"
+        Resource = "*"
       }
     ]
   })
