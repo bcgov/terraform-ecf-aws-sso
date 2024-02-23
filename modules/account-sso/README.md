@@ -4,7 +4,7 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.56.0 |
-| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | 2.0.0 |
+| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | 4.4.0 |
 
 ## Providers
 
@@ -12,7 +12,7 @@
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.56.0 |
 | <a name="provider_http"></a> [http](#provider\_http) | n/a |
-| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | 2.0.0 |
+| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | 4.4.0 |
 
 ## Modules
 
@@ -28,7 +28,7 @@ No modules.
 | [aws_iam_saml_provider.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_saml_provider) | resource |
 | [aws_caller_identity.aws_context](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [http_http.saml_idp_metadata](https://registry.terraform.io/providers/hashicorp/http/latest/docs/data-sources/http) | data source |
-| [keycloak_realm.kc-lz-sso-realm](https://registry.terraform.io/providers/mrparkers/keycloak/2.0.0/docs/data-sources/realm) | data source |
+| [keycloak_realm.kc-lz-sso-realm](https://registry.terraform.io/providers/mrparkers/keycloak/4.4.0/docs/data-sources/realm) | data source |
 
 ## Inputs
 

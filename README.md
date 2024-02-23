@@ -3,13 +3,13 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | 2.0.0 |
+| <a name="requirement_keycloak"></a> [keycloak](#requirement\_keycloak) | 4.4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | 2.0.0 |
+| <a name="provider_keycloak"></a> [keycloak](#provider\_keycloak) | 4.4.0 |
 
 ## Modules
 
@@ -19,10 +19,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [keycloak_group.project_group](https://registry.terraform.io/providers/mrparkers/keycloak/2.0.0/docs/resources/group) | resource |
-| [keycloak_group.role_groups](https://registry.terraform.io/providers/mrparkers/keycloak/2.0.0/docs/resources/group) | resource |
-| [keycloak_group.tenant_group](https://registry.terraform.io/providers/mrparkers/keycloak/2.0.0/docs/data-sources/group) | data source |
-| [keycloak_realm.realm](https://registry.terraform.io/providers/mrparkers/keycloak/2.0.0/docs/data-sources/realm) | data source |
+| [keycloak_group.project_group](https://registry.terraform.io/providers/mrparkers/keycloak/4.4.0/docs/resources/group) | resource |
+| [keycloak_group.role_groups](https://registry.terraform.io/providers/mrparkers/keycloak/4.4.0/docs/resources/group) | resource |
+| [keycloak_group.tenant_group](https://registry.terraform.io/providers/mrparkers/keycloak/4.4.0/docs/data-sources/group) | data source |
+| [keycloak_realm.realm](https://registry.terraform.io/providers/mrparkers/keycloak/4.4.0/docs/data-sources/realm) | data source |
 
 ## Inputs
 
