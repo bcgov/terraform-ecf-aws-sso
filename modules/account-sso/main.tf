@@ -3,7 +3,7 @@ data "keycloak_realm" "kc-lz-sso-realm" {
 }
 
 data "http" "saml_idp_metadata" {
-  url = "${var.kc_base_url}/auth/realms/${var.kc_realm}/protocol/saml/descriptor"
+  url = "${var.kc_base_url}/realms/${var.kc_realm}/protocol/saml/descriptor"
 }
 
 resource "aws_iam_saml_provider" "default" {
