@@ -82,6 +82,7 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
           "iam:Delete*",
           "iam:DetachRolePolicy",
           "iam:DeleteRolePolicy",
+          "iam:AttachRolePolicy",
           "iam:DeleteUserPermissionsBoundary",
           "iam:PutUserPermissionsBoundary",
           "iam:DeleteRolePermissionsBoundary"
