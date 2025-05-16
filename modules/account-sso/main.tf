@@ -154,6 +154,14 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
         Effect   = "Deny"
         Resource = "arn:aws:secretsmanager:*:*:secret:accelerator*"
         Sid      = "DenyDefaultSecretManagerAlteration"
+      },
+      {
+        Action = [
+          "aws-marketplace:*"
+        ]
+        Effect   = "Deny"
+        Resource = "*"
+        Sid      = "DenyAWSMarketplace"
       }
     ]
   })
