@@ -157,7 +157,8 @@ resource "aws_iam_policy" "bcgov_perm_boundary" {
       },
       {
         Action = [
-          "aws-marketplace:*"
+          "aws-marketplace:*",
+          "aws-marketplace-management:*"
         ]
         Effect   = "Deny"
         Resource = "*"
